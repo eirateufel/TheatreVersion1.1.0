@@ -11,8 +11,8 @@ const {
 } = require('../constants/comedy');
 
 class Cost {
-    constructor(invoice) {
-        this.invoice = invoice;
+    constructor(performances) {
+        this.performances = performances;
     }
 
     calcComedy(perf) {
@@ -34,7 +34,7 @@ class Cost {
     calcTotal() {
         this.totoalAmount = 0;
         this.transcript = [];
-        for (let perf of this.invoice.performance) {
+        for (let perf of this.performances) {
             switch (perf.type) {
                 case 'tragedy':
                     this.totoalAmount += this.calcTragedy(perf);

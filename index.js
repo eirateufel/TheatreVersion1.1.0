@@ -7,9 +7,9 @@ const Statement = require('./js/components/Statement');
 //const invoiceInit = require('./invoices.json');
 //const invoice = invoiceInit[0];
 
-const cost = new Cost(invoice);
+const cost = new Cost(invoice.performance);
 const credits = new Credits(invoice);
-const statement = new Statement(cost.calcTotal(), credits.calcAllCredits());
+const statement = new Statement(invoice.customer, cost.calcTotal(), credits.calcAllCredits());
 
 console.log(statement.buildStatement());
 
